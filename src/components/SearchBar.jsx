@@ -1,18 +1,19 @@
-import './SearchBar.css'
 
 export default function SearchBar({searchText, notesData, setCurrentNotes, onSearchClick, }) {
 
-    function searchNotes(){
+    function searchNotes(text){
+        onSearchClick(text)
         let result = []
-        result  = notesData.filter(note => note.text.toLowerCase().includes(searchText.toLowerCase()));
+        result  = notesData.filter(note => note.text.toLowerCase().includes(text.toLowerCase()));
         setCurrentNotes(result);
-
     }
+
+    
 
     return (
         <>
-            <input type="text" placeholder="Search" value={searchText} onChange={(e) => onSearchClick(e.target.value)}/>
-            <button onClick={searchNotes}>Search</button>
+            <input type="text" className='search-bar' placeholder="Search" value={searchText} onChange={(e) => searchNotes(e.target.value)}/>
+            
         </>
     )
 }                                  

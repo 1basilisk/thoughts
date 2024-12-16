@@ -4,7 +4,6 @@ import NotesList from './Notes';
 import { useState } from 'react';
 
 import '../App.css';
-import './SearchBar.css'
 
 export default function Main(){
 
@@ -13,7 +12,7 @@ export default function Main(){
     const [notesData, setNotesData] = useState([
     {
         id: 1,
-        datetime: "15/12/2024",
+        datetime: null,
         text: "This is the first test note",
         heart: false,
         tags: null
@@ -21,7 +20,7 @@ export default function Main(){
     },
     {
         id: 2,
-        datetime: "15/12/2024",
+        datetime: null,
         text: "Hi, its always sunny in philly",
         heart: false,
         tags: null
@@ -29,7 +28,7 @@ export default function Main(){
     },
     {
         id: 3,
-        datetime: "15/12/2024",
+        datetime: null,
         text: "Earth is almost a sphere",
         heart: false,
         tags: null
@@ -40,7 +39,7 @@ const [currentNotes, setCurrentNotes] = useState(notesData)
 
     return (
         <div>
-        <div className="searchbar">
+        <div>
         <SearchBar notesData={notesData} setCurrentNotes={setCurrentNotes} searchText={searchText} onSearchClick={setSearchText}
         />
       </div>
