@@ -1,6 +1,11 @@
+import { useState } from 'react';
 import '../App.css';
 
 function Notes({ note }) {
+    const [likes, setLikes] = useState(0);
+    const [dislikes, setDislikes] = useState(0);
+
+
     return (
         <div className="notes" >
             <div className='note-text'> {note.text} </div>
@@ -9,8 +14,8 @@ function Notes({ note }) {
                      {note.datetime} 
                 </div>
                 <div className="buttons">
-                    <button> 👍  {note.likes}    </button>
-                    <button> 👎  {note.dislikes} </button>
+                    <button onClick={() => setLikes(likes+1)}> 👍  {likes}    </button>
+                    <button onClick={() => setDislikes(dislikes+1)}> 👎  {dislikes} </button>
                 </div>
             </div>
     </div>
