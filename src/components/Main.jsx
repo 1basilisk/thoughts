@@ -2,16 +2,19 @@ import React, { useState, useEffect } from 'react';
 import SearchBar from './SearchBar';
 import NewNote from './newNote';
 import NotesList from './Notes';
+import fetchAllData from './fetchData';
 import '../App.css';
 
 export default function Main() {
+
+
+
   // States
   const [searchText, setSearchText] = useState("");
-  const [note, setNote] = useState(null);
+  const [note, setNote] = useState("");
   const [notesData, setNotesData] = useState([]);  // Initial empty array
   const [currentNotes, setCurrentNotes] = useState([]);
-
-  // Load thoughts from localStorage when the component mounts
+ 
   useEffect(() => {
     const storedThoughts = localStorage.getItem('thoughts');
     if (storedThoughts) {

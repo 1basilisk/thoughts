@@ -33,7 +33,7 @@ export default function NewNote({ newNote, setNewNote, notesData, setNotesData, 
                 <h2 className="info"> Got a thought? </h2>
                 <textarea className="text-area" rows="10" cols="50" value={newNote} onChange={(e) => setNewNote(e.target.value)} />
                 <br />
-                <button className="save-button" onClick={onSave}> Save </button>
+                <button className="save-button" onClick={onSave} disabled={newNote===""}> Save </button>
             </div>
 
             <h3 className="info"> Most thoughts are worth forgetting, but some are worth sharing... </h3>
